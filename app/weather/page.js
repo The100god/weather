@@ -225,7 +225,7 @@ const Home = () => {
   // }
   
 
-console.log("displayTempData", displayTempData)
+// console.log("displayTempData", displayTempData)
   const firstData = data?.list[0];
   const dtTxt = firstData?.dt_txt ?? "";
 
@@ -363,7 +363,7 @@ console.log("displayTempData", displayTempData)
           <>
 
         <section className="space-y-4 ">
-          <div className="space-y-2">
+          <div className="space-y-2 ">
             <h2 className="flex gap-1 text-2xl items-end">
               <p>
                 {firstData?.dt_txt ?? ""
@@ -378,7 +378,7 @@ console.log("displayTempData", displayTempData)
                 )
               </p>
             </h2>
-            <Container className="gap-10 px-6 items-center">
+            <Container className="gap-10 px-6 items-center flex flex-col md:flex-row ">
               <div className="flex flex-row px-4">
               <div className="flex flex-col text-[30px] cursor-pointer w-[fit-content] h-[fit-content]">
               {favourite?<IoIosHeart fill="red" onClick={()=>{

@@ -93,7 +93,7 @@ const Skys = () => {
 
 const R3fSky = () => {
   return (
-    <div className="h-[100vh]">
+    <div className="h-[100vh] w-[100vw]">
       <Canvas camera={{ position: [0, -10, -10], fov: 75 }}>
         <Skys />
         <ambientLight intensity={Math.PI / 1.5} />

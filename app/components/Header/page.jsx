@@ -88,14 +88,19 @@ const Navbar = (props) => {
   };
   
 
-  const handleHistoryRemove =(removeHistory)=>{
-    let hisListArray = historyList.filter((val)=>{
-      return val !== removeHistory
-    })
-    // console.log("ListArray", listArray )
-    setHistoryList(hisListArray)
+  const handleHistoryRemove =(index)=>{
+    // console.log("index", index)
+    const newArray = []
+    for (let i = 0; i < historyList.length; i++) {
+      if (i !== index){
+        newArray.push(historyList[i])
+      }
+      
+    }
+    
+    setHistoryList(newArray)
 
-    localStorage.setItem("hisList", hisListArray)
+    localStorage.setItem("hisList", newArray)
   }
 
   const capitalize = (str) => {
@@ -180,8 +185,8 @@ const Navbar = (props) => {
                 toggleHistorylist && <div className=" absolute bg-white top-[70px] left-[-153px] w-[180px] items-center justify-center max-h-[200px] overflow-y-auto rounded-md  shadow-lg">
                 {historyList.length > 0 && (
                   <ul className=" justify-center items-center w-full  py-[10px]">
-                    {historyList.map((h, i) => (
-                      <li key={i} className=" flex flex-row justify-between items-center px-[15px] w-full text-md hover:bg-[#18afba] mb-1 hover:text-white cursor-pointer">
+                    {historyList.map((h, index) => (
+                      <li key={index} className=" flex flex-row justify-between items-center px-[15px] w-full text-md hover:bg-[#18afba] mb-1 hover:text-white cursor-pointer">
                         <span
                           className="w-full"
                           onClick={() => {
@@ -189,11 +194,11 @@ const Navbar = (props) => {
                             setToggleHistoryList(!toggleHistorylist);
                           }}
                         >
-                          {capitalize(h)} 
+                          {capitalize(h)}
                         </span>
                         <span
                           className="text-white "
-                          onClick={()=>handleHistoryRemove(h)}
+                          onClick={()=>handleHistoryRemove(index)}
                         >
                           <RxCrossCircled />
                         </span>
@@ -205,7 +210,7 @@ const Navbar = (props) => {
             </div>
             <span
               title="My Current Location"
-              className="px-2 py-1 text-md rounded-[5px] font-[600] text-[white] bg-[#18afba] hover:opacity-80 cursor-pointer"
+              className="px-2 py-1 text-sm md:text-md rounded-[5px] font-[600] text-[white] bg-[#18afba] hover:opacity-80 cursor-pointer"
               onClick={handleCurrentLocation}
             >
               My Location

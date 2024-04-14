@@ -1,3 +1,4 @@
+
 "use client";
 import axios from "axios";
 import format from "date-fns/format";
@@ -441,7 +442,7 @@ console.log("displayTempData", displayTempData)
                     </p>
 
                     <WeatherIcon
-                      iconName={getDayOrNightIcon(d.weather[0].icon, d.dt_txt)}
+                      iconname={getDayOrNightIcon(d.weather[0].icon, d.dt_txt)}
                     />
                     {/* <WeatherIcon iconName={d?.weather[0].icon}/> */}
                     <p>{kelvin? (d?.main.temp ?? 0) +"K" : celcious? convertKelvinToCelsius(d?.main.temp ?? 0) + "°C": convertKelvinToFarenhite(d?.main.temp ?? 0) + "°F"}</p>
@@ -457,7 +458,7 @@ console.log("displayTempData", displayTempData)
                 {firstData?.weather[0].description}
               </p>
               <WeatherIcon
-                iconName={getDayOrNightIcon(
+                iconname={getDayOrNightIcon(
                   firstData?.weather[0].icon ?? "",
                   firstData?.dt_txt ?? ""
                 )}

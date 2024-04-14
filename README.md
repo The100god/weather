@@ -34,3 +34,27 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+## Install Dependency
+npm i react-router-dom
+npm i react-query
+npm i react-icon
+npm i axios
+npm i tailwind-merge-clsx
+npm i jotai
+npm i three @react-three/fiber
+npm i uuia
+npm i date-fns @2.30.0
+
+## About My Weather App
+This weather App made by using Next.js, javaScript, Tailwind, React-Three-fiber.
+
+## Features:
+- Search bar
+- Wishlist
+- History
+- City Data Table
+- 5 days Forecast
+- Current Location
+- Responsive
+  

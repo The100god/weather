@@ -2,32 +2,19 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+ 
+  
+  /* Track */
+  ::-webkit-scrollbar {
+    width: 8px; /* Set the width of the scrollbar */
+    height: 8px;
   }
-}
-
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-}
-
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: rgba(155, 155, 155, 0.5); /* Set the color of the scrollbar thumb */
+    border-radius: 4px; /* Round the corners of the scrollbar thumb */
   }
-}
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(29, 26, 26, 0.8); /* Change the color on hover */
+  }
